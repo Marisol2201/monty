@@ -1,4 +1,4 @@
-#include "header.h"
+#include "monty.h"
 
 /**
  * split_str - divition by string
@@ -36,7 +36,7 @@ void is_digit(char *number)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", slayer.n_lines);
 		free(slayer.getl_info);
-		free_list(slayer.stack_head);
+		slayer_list(slayer.stack_head);
 		fclose(slayer.fp_struct);
 		exit(EXIT_FAILURE);
 	}
@@ -44,7 +44,7 @@ void is_digit(char *number)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", slayer.n_lines);
 		free(slayer.getl_info);
-		free_list(slayer.stack_head);
+		slayer_list(slayer.stack_head);
 		fclose(slayer.fp_struct);
 		exit(EXIT_FAILURE);
 	}
@@ -54,9 +54,35 @@ void is_digit(char *number)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", slayer.n_lines);
 			free(slayer.getl_info);
-			free_list(slayer.stack_head);
+			slayer_list(slayer.stack_head);
 			fclose(slayer.fp_struct);
 			exit(EXIT_FAILURE);
 		}
+	}
+}
+/**
+ * delim_checker - check whitespaces
+ * @str: string for check
+ *
+ * Return: void
+ */
+void delim_checker(char *str)
+{
+	int index, i;
+
+	index = 0;
+	while (str[index] == ' ' || str[index] == '\t' || str[index] == '\n')
+	{
+		index++;
+	}
+	if (index != 0)
+	{
+		i = 0;
+		while (str[i + index] != '\0')
+		{
+			str[i] = str[i + index];
+			i++;
+		}
+		str[i] = '\0';
 	}
 }

@@ -1,4 +1,4 @@
-#include "header.h"
+#include "monty.h"
 
 /**
  * slayer_list - Rip and tear a double linked list
@@ -6,7 +6,7 @@
  *
  * Return: Nothing.
  */
-void free_list(stack_t *head)
+void slayer_list(stack_t *head)
 {
 	stack_t *tmp_1 = NULL, *tmp_2 = NULL;
 

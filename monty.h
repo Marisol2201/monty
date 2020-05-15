@@ -1,5 +1,5 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef MONTY_H
+#define MONTY_H
 
 /* Libraries */
 #include <stdio.h>
@@ -37,6 +37,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 /**
  * struct hero_s - funtional data for project
  * @n_lines: lines counter
@@ -59,15 +60,17 @@ typedef struct hero_s
 
 } hero_t;
 
+/* Global Variable */
 extern hero_t slayer;
 
-/* Aux Functions */
-char *split_str(char *str_to_split);
-void is_digit(char *number);
-void opcode(char *command);
+/* Aux Functions - Prototypes */
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
-void free_list(stack_t *head);
-void delim(char *str);
+void op_pint(stack_t **stack, unsigned int line_number);
+char *split_str(char *str_to_split);
+void slayer_list(stack_t *head);
+void is_digit(char *number);
+void opcode(char *command);
+void delim_checker(char *str);
 
-#endif /* HEADER_H */
+#endif /* MONTY_H */

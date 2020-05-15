@@ -1,4 +1,4 @@
-#include "header.h"
+ #include "monty.h"
 
 /**
  * opcode - interpreter operations
@@ -10,12 +10,16 @@ void opcode(char *command)
 {
 	unsigned int i = 0;
 	instruction_t opcode_func[] = {
-		{"push", op_push},
-		{"pall", op_pall},
-		{NULL, NULL},
+	    {"push", op_push},
+	    {"pall", op_pall},
+	    {"pint", op_pint},
+	    /*{"swap", op_swap},*/
+	    /*{"pop", op_pop},*/
+	    /*{"add", op_add},*/
+	    /*{"nop", op_nop},*/
+	    {NULL, NULL},
 	};
 
-	i = 0;
 	while ((opcode_func[i].opcode != NULL))
 	{
 		if (strcmp(opcode_func[i].opcode, command) == 0)
@@ -27,7 +31,7 @@ void opcode(char *command)
 	}
 	fprintf(stderr, "L%u: unknown instruction %s\n", slayer.n_lines, command);
 	free(slayer.getl_info);
-	free_list(slayer.stack_head);
+	slayer_list(slayer.stack_head);
 	fclose(slayer.fp_struct);
 	exit(EXIT_FAILURE);
 }
