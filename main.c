@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	slayer.n_lines = 0;
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	slayer.fp_struct = fopen(argv[1], "r");
