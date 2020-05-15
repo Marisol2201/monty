@@ -1,5 +1,7 @@
 #include "monty.h"
+
 hero_t slayer;
+
 /**
  *  main -  interpreter for Monty ByteCodes files
  *  @argc: Number of paramethers
