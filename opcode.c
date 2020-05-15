@@ -1,4 +1,4 @@
- #include "monty.h"
+#include "monty.h"
 
 /**
  * opcode - interpreter operations
@@ -10,14 +10,14 @@ void opcode(char *command)
 {
 	unsigned int i = 0;
 	instruction_t opcode_func[] = {
-	    {"push", op_push},
-	    {"pall", op_pall},
-	    {"pint", op_pint},
-	    /*{"swap", op_swap},*/
-	    /*{"pop", op_pop},*/
-	    /*{"add", op_add},*/
-	    /*{"nop", op_nop},*/
-	    {NULL, NULL},
+		{"push", op_push},
+		{"pall", op_pall},
+		{"pint", op_pint},
+		{"swap", op_swap},
+		{"pop", op_pop},
+		{"add", op_add},
+		{"nop", op_nop},
+		{NULL, NULL},
 	};
 
 	while ((opcode_func[i].opcode != NULL))
