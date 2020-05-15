@@ -67,10 +67,14 @@ extern hero_t slayer;
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
 void op_pint(stack_t **stack, unsigned int line_number);
+void op_swap(stack_t **stack, unsigned int line_number);
 char *split_str(char *str_to_split);
 void slayer_list(stack_t *head);
 void is_digit(char *number);
 void opcode(char *command);
 void delim_checker(char *str);
+void op_add(stack_t **stack, unsigned int line_number);
+size_t dlistint_len(stack_t *h);
+void op_nop(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
